@@ -57,7 +57,7 @@ public class CRUDBean {
 	}
 
 	public void save() {
-		System.out.println(FacesUtils.getParameter("book"));
+		System.out.println(FacesUtils.getParameter("bean"));
 		System.out.println("saving");
 	}
 
