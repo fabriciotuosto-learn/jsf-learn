@@ -9,8 +9,6 @@ import javax.faces.context.FacesContext;
 
 public class FacesUtils {
 
-	private static ExternalContext context = null;
-	
 	public static Locale getUserLocale() {
 		return getExternalContext().getRequestLocale();
 	}
@@ -61,13 +59,5 @@ public class FacesUtils {
 	private static ExternalContext getExternalContext() {
 		return FacesContext.getCurrentInstance().getExternalContext();
 	}
-	
-	/**
-	 * Only for test purposes
-	 * @param context
-	 */
-	protected static void setExternalContext(ExternalContext context){
-		FacesUtils.context = context;
-	}
-	
+
 }

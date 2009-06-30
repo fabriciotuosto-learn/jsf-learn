@@ -10,8 +10,8 @@
 		<f:view>
 			<h:form>
 				<h:panelGrid binding="${crudbean.editPanel}"/>
-				<h:commandButton action="${crudbean.save}"/>
-				<h:commandButton action="${crudbean.back}" />
+				<h:commandButton action="${crudbean.save}" value="Save"/>
+				<h:commandButton action="${crudbean.back}" value="Cancel"/>
 			</h:form>
 		</f:view>
 	</body>
