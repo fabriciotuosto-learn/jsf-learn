@@ -22,12 +22,10 @@ public class CRUDBean {
 	@SuppressWarnings("unchecked")
 	public CRUDBean() throws Exception {
 		if (grid == null) {
-			Book book = new Book("Italo Calvino", "111111111",
-					"Seis Propuestas para el proximo milenio");
-			Application app = FacesContext.getCurrentInstance()
-					.getApplication();
-			FacesContext.getCurrentInstance().getExternalContext()
-					.getSessionMap().put("bean", book);
+			Book book = new Book();
+			FacesContext context = FacesContext.getCurrentInstance();
+			Application app = context.getApplication();
+			context.getExternalContext().getSessionMap().put("bean", book);
 			grid = (HtmlPanelGrid) app
 					.createComponent(HtmlPanelGrid.COMPONENT_TYPE);
 			grid.setColumns(2);
@@ -42,7 +40,7 @@ public class CRUDBean {
 						.getKey());
 				HtmlInputText input = (HtmlInputText) app
 						.createComponent(HtmlInputText.COMPONENT_TYPE);
-				input.setSize(entry.getValue().toString().length());
+				input.setSize(50);
 				input.setValueBinding("value", app
 						.createValueBinding(_valueBinding));
 				grid.getChildren().add(input);
